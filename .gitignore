@@ -37,3 +37,6 @@ yarn-debug.log*
 
 # Ignore env file, for api keys
 .env*
+
+# Vs Code temp files
+.vscode*

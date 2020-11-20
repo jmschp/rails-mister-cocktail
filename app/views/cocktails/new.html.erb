@@ -2,8 +2,7 @@
   <h3>New cocktail</h3>
   <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name, label: "Please enter cocktail name", placeholder: "Margarita", class: "form-control" %>
-      <%= f.input :image_url, label: "Please enter image url", placeholder: "https://source.unsplash.com/1000x1000/?margarita", class: "form-control" %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit class: "btn btn-primary btn-block" %>
   <% end %>
 </div>
-
