@@ -1,15 +1,14 @@
-<div class="d-flex align-items-center justify-content-around">
-  <div class="card-product">
-    <%= image_tag(@cocktail.image_url) %>
-    <div class="card-product-infos">
-      <h2><%= @cocktail.name %> </h2>
-        <% @cocktails_doses.each do |dose| %>
-          <p><strong><%= dose.description %>  <%= dose.ingredient.name %></strong></p>
-        <% end %>
-      <br>
+<div class="container mt-4">
+  <div class="d-flex align-items-center justify-content-around">
+    <div class="card-product">
+      <%= image_tag(@cocktail.image_url) %>
+      <div class="card-product-infos">
+        <h2><%= @cocktail.name %> </h2>
+          <% @cocktails_doses.each do |dose| %>
+            <p><strong><%= dose.description %>  <%= dose.ingredient.name %></strong></p>
+          <% end %>
+      </div>
     </div>
-  </div>
-  <div>
     <%= simple_form_for([@cocktail, @dose]) do |f| %>
       <%= f.input :description, label: "Please enter dose description", placeholder: "1 shot" %>
       <%= f.association :ingredient, collection: Ingredient.order('name ASC'), label: "Select ingredient" %>
