@@ -12,7 +12,7 @@
   <div>
     <%= simple_form_for([@cocktail, @dose]) do |f| %>
       <%= f.input :description, label: "Please enter dose description", placeholder: "1 shot" %>
-      <%= f.association :ingredient, label: "Select ingredient" %>
+      <%= f.association :ingredient, collection: Ingredient.order('name ASC'), label: "Select ingredient" %>
       <%# <%= link_to('Add new', '#', class: "btn btn-primary btn-block") %>
       <%= f.submit 'Add new dose', class: "btn btn-primary btn-block" %>
     <% end %>
