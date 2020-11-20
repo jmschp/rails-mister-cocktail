@@ -18,3 +18,10 @@ ingredients.each do |ingredient|
   ing = ingredient['strIngredient1']
   Ingredient.create!(name: ing)
 end
+
+# Seed cocktails with images
+cocktails = ['Margarita', 'Caipirinha', 'Mojito', 'Cosmopolitan', 'Negroni', 'Martini', 'Boulevardier', 'Manhattan', 'Daiquiri']
+cocktails.each do |cocktail|
+  image_url = "https://source.unsplash.com/1000x1000/?cocktail,#{cocktail}"
+  Cocktail.create!(name: cocktail, image_url: image_url)
+end

@@ -1,0 +1,15 @@
+<div class="container mt-4">
+<div class="card-product">
+  <%= image_tag(@cocktail.image_url) %>
+  <div class="card-product-infos">
+    <h2><%= @cocktail.name %> </h2>
+    <% if !@cocktails_doses.empty? %>
+      <% @cocktails_doses.each do |dose| %>
+        <p><strong><%= dose.description %>  <%= dose.ingredient.name %></strong></p>
+      <% end %>
+    <% end %>
+    <br>
+    <%= link_to('Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary')%>
+  </div>
+</div>
+</div>
