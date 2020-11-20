@@ -18,7 +18,7 @@ class CocktailsController < ApplicationController
     cocktail_name = cocktail_params[:name].capitalize
     @cocktail = Cocktail.new(name: cocktail_name, image_url: cocktail_params[:image_url])
     if @cocktail.save
-      redirect_to new_cocktail_dose_path(@cocktail)
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
